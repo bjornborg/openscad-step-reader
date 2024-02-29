@@ -2,8 +2,20 @@
 
 A proof-of-concept project, testing OpenSCAD / STEP files loading.
 
-## Usage
+## Dependencies
 
+Requires
+
+- libocct-foundation-dev
+
+
+## Building
+
+```sh
+mkdir build && cd build && cmake ..
+make -j
+```
+## Usage
 
     $ openscad-step-reader
     
@@ -47,9 +59,11 @@ See the [examples] sub directory for STEP files and their STL/SCAD output.
 
 e.g. the files in `examples/box` were created with:
 
+```sh
     openscad-step-reader --stl-ascii examples/box/box.stp > examples/box/box-ascii.stl
     openscad-step-reader --stl-scad  examples/box/box.stp > examples/box/box.scad
     openscad-step-reader --stl-faces examples/box/box.stp > examples/box/box-faces.scad
+```
 
 
 The `--explore` option is a development tool to help learn
